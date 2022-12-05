@@ -15,13 +15,46 @@
         <checkstyle.version>10.3.3</checkstyle.version>
         <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
         <junit-jupiter.version>5.9.1</junit-jupiter.version>
+        <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+        <junit-platform-suite-engine.version>1.9.1</junit-platform-suite-engine.version>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>AllTests</id>
+            <properties>
+                <suite>AllTestsSuite</suite>
+            </properties>
+        </profile>
+        <profile>
+            <id>Positive</id>
+            <properties>
+                <suite>PositiveSuite</suite>
+            </properties>
+        </profile>
+        <profile>
+            <id>Negative</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite>NegativeSuite</suite>
+            </properties>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite-engine</artifactId>
+            <version>${junit-platform-suite-engine.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -60,6 +93,15 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <test>${suite}</test>
+                </configuration>
             </plugin>
         </plugins>
     </build>
