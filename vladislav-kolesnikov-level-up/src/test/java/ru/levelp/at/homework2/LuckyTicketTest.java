@@ -1,7 +1,7 @@
-package ru.levelp.at;
+package ru.levelp.at.homework2;
 
-import static ru.levelp.at.TestGroupName.NEGATIVE;
-import static ru.levelp.at.TestGroupName.POSITIVE;
+import static ru.levelp.at.homework2.TestGroupName.NEGATIVE;
+import static ru.levelp.at.homework2.TestGroupName.POSITIVE;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Tag;

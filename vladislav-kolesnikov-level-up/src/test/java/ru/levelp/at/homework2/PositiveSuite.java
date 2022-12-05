@@ -1,6 +1,6 @@
-package ru.levelp.at;
+package ru.levelp.at.homework2;
 
-import static ru.levelp.at.TestGroupName.NEGATIVE;
+import static ru.levelp.at.homework2.TestGroupName.POSITIVE;
 
 import org.junit.platform.suite.api.IncludeTags;
 import org.junit.platform.suite.api.SelectPackages;
@@ -8,6 +8,6 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @SelectPackages("ru.levelp.at")
-@IncludeTags(NEGATIVE)
-public class NegativeSuite {
+@IncludeTags(POSITIVE)
+public class PositiveSuite {
 }

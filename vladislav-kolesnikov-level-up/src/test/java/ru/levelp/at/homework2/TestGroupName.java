@@ -1,4 +1,4 @@
-package ru.levelp.at;
+package ru.levelp.at.homework2;
 
 public class TestGroupName {
 
